@@ -3,15 +3,14 @@ WITH BIKE AS(
     SELECT 
 
     
-    START_STATION_ID,
+    START_STATIO_ID,
     START_STATION_NAME,
     START_LAT,
     START_LNG
 
+    FROM {{ ref('stg_bike') }}
 
-    FROM {{ source('DEMO', 'BIKE') }}
-
-    WHERE BIKE_ID != 'ride_id'
+    WHERE RIDE_ID != 'ride_id'
 
     
 
